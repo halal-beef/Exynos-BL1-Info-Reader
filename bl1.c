@@ -89,8 +89,8 @@ int main(int argc, char *argv[])
     printf("\n");
     printf("BL1 Footer Information:\n");
     printf("Target SoC ID: 0x%x\n", bl1_footer.machine_id & 0xFFFF0000);
-    printf("Target SoC Main Rev [1]: 0x%u\n", bl1_footer.machine_id & 0x0000FF);
-    printf("Target SoC Sub Rev [1]: 0x%u\n", bl1_footer.machine_id & 0x000000FF);
+    printf("Target SoC Main Rev [1]: %u\n", bl1_footer.machine_id & 0x0000FF);
+    printf("Target SoC Sub Rev [1]: %u\n", bl1_footer.machine_id & 0x000000FF);
     printf("Codesigner Version: %u\n", bl1_footer.codesigner_version);
 
     if(!memcmp(bl1_footer.ap_info, target_ap_info, 4))
