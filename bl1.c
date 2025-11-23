@@ -28,7 +28,8 @@ int main(int argc, char *argv[])
     }
 
     FILE *file = fopen(argv[1], "rb");
-    if (!file) {
+    if (!file)
+    {
         perror("Failed to open BL1");
         return 1;
     }
@@ -50,11 +51,17 @@ int main(int argc, char *argv[])
     if (read_len != bl1_sz)
     {
         fprintf(stderr, "Unable to read entire BL1 file\n");
+
+        if (fclose(file) != 0) fprintf(stderr, "Unable to close file\n");
+        free(bl1_file);
+
         return 1;
     }
 
-    if (fclose(file) != 0) {
+    if (fclose(file) != 0)
+    {
         fprintf(stderr, "Unable to close file\n");
+        free(bl1_file);
         return 1;
     }
 
