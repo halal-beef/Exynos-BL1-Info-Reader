@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 
+// Should technically be -0x930 but we log the Machine ID too
 #define FOOTER_OFFSET (-0x938)
 
 typedef struct ecdsa_pubkey

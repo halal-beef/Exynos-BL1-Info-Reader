@@ -29,7 +29,7 @@ Codesigner Version: 5
 AP Info: SLSI (MATCHED)
 Sign Timestamp (DD/MM/YYYY HH:MM:SS): 06/11/2024 15:14:33
 Rollback Counter: 22
-Sign Type: ECDSA_NIST_521
+Sign Type: ECDSA_NIST_384
 
 [1]:
 It is unknown if those parameters actually do refer to SoC revision or
