@@ -61,7 +61,7 @@ typedef struct bl1_footer
     sign_type_t sign_type;
     char build_desc[36]; // Unused, though is apparently a thing according to CodeSigner.
     uint32_t key_index;
-    uint8_t debug_certificate[48]; // Has it's own structure but doesn't seem to be present on retail images atleast.
+    uint8_t unk_2[28];
 
     // Key stuff, assumes Elliptic Curve, this is 990 and higher, older devices use a different algorithm.
     ecdsa_pubkey_t stage2_pubkey_tee;
@@ -71,7 +71,6 @@ typedef struct bl1_footer
     uint16_t major_id;
     uint16_t sub_id;
     uint64_t reserved;
-    char unk_2[20]; // All zeroed but codesigner doesn't count this as reserved.
 
     ecdsa_pubkey_t bl1_pubkey; // Documented as stage1_pubkey but stage1 == BL1.
 
